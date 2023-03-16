@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Grafik_v0._1.GrafikMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Grafik_v0._1"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <UserControl.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Height" Value="39"/>
+            <Setter Property="Width" Value="39"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderThickness" Value="0.5"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+    
+    <StackPanel Orientation="Vertical" MouseDown="Menu_MouseDown" Margin="0 0 0 20">
+        
+        <!-- Label z aktualnie wybraną opcją menu -->
+        <Label Name="SelectedMenuItemLabel" Content="{Binding SelectedContent}" Background="{Binding Background}"/>
+
+        <!-- Popup zawierający całe menu -->
+        <Popup Name="popupControl" IsOpen="False" PlacementTarget="{Binding ElementName=SelectedMenuItemLabel}" MouseLeave="Menu_MouseLeave">
+
+            <ItemsControl ItemsSource="{Binding MenuItems}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Content}" MouseDown="MenuItem_MouseDown" Background="#5187b5" Foreground="White"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+        </Popup>
+
+    </StackPanel>
+</UserControl>

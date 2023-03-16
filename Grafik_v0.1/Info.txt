@@ -1,0 +1,39 @@
+﻿Controls 
+	ColorPicker
+		Kontrolka wyświetlająca paletę kolorów 
+
+	Grafik
+		Kontrolka zawierająca grafik jednego pracownika złożony z serii GrafikMenu
+
+	GrafikMenu
+		Kontrolka menu odpowiedzialna za wybór godzin pracy w danym dniu
+
+	Kalendarz
+		Kontrolka wyświetlająca dni miesiąca i tygodnia w danym miesiącu.
+
+
+Windows
+	wDodajPracownika
+		Okno służące do dodawania i usuwania pracowników do i z grafiku w trakcie.
+
+	wNowy
+		Okno tworzenia nowego grafiku
+
+	wOpcjePracy
+		Okno konfiguracji kontrolki GrafikMenu umożliwiające dodawanie i usuwanie elementów w GrafikMenu
+
+	wPracownicy
+		Okno zarządzania wszystkimi pracownikami w firmie
+
+
+DB
+	Klasa zapisująca i odczytująca dane ogólne takie jak lista wszystkich pracowników oraz podstawowa wersja Menu godzin pracy. 
+
+MainWindowEvents
+	Część klasy MainWindow zawierająca obsługę wszystkich Click Eventów okna głównego
+
+RWFile
+	Klasa przechowująca dane całego grafiku. Odpowiedzialna za odczytywanie i zapisywanie danych do pliku
+
+MenuItem
+	Klasa przechowująca pojedynczy Item składowy kontrolki GrafikMenu

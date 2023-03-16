@@ -1,0 +1,70 @@
+﻿<Window x:Class="Grafik_v0._1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Grafik_v0._1"
+        mc:Ignorable="d"
+       Title="Grafik v0.1" Height="450" Width="800" Closing="OnClose">
+    <Grid Name="windowGrid" Background="#7F9FCDF5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Menu Height="25" VerticalAlignment="Top" Grid.Row="0">
+            <MenuItem Header="Plik">
+                <MenuItem Header="Nowy" Click="Nowy_Click"/>
+                <MenuItem Header="Otwórz" Click="Otworz_Click"/>
+                <MenuItem Name="menuZapisz" Header="Zapisz" Click="Zapisz_Click" IsEnabled="False"/>
+                <MenuItem Name="menuZapiszJako" Header="Zapisz jako..." Click="ZapiszJako_Click" IsEnabled="False"/>
+                <Separator/>
+                <MenuItem Header="Wyjście" Click="Wyjscie_Click"/>
+            </MenuItem>
+            <MenuItem Header="Pracownicy">
+                <MenuItem Name="menuDodajUsunPracownika" Header="Dodaj do grafiku" Click="DodajPracownikaDoGrafiku_Click" IsEnabled="False"/>
+                <!-- Otwiera okno z listą pracowników do dodania do grafiku -->
+                <Separator/>
+                <MenuItem Header="Zarządzaj" Click="ZarzadzajPracownikami_Click"/>
+                <!-- Otwiera okno zarządzania pracownikami -->
+            </MenuItem>
+            <MenuItem Header="Opcje pracy">
+                <MenuItem Header="Konfiguracja opcji pracy" Click="KonfiguracjaOpcjiPracy_Click"/>
+                <!-- Okno konfugurowania wzoru menu -->
+            </MenuItem>
+        </Menu>
+
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.Row="1">
+            <StackPanel Orientation="Vertical">
+
+                <StackPanel Name="calendarPanel" Grid.Row="1">
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+
+                    <ItemsControl Name="grafikControlsList" >
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <local:Grafik/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <local:ColorPicker/>
+            <Button Name="colorButton" Content="Koloruj" Width="100" Margin="5 5" IsEnabled="False" Click="ColorButton_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

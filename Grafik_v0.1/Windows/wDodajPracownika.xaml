@@ -1,0 +1,19 @@
+﻿<Window x:Class="Grafik_v0._1.Windows.wDodajPracownika"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Grafik_v0._1.Windows"
+        mc:Ignorable="d"
+        Title="DodajPracownika" Height="250" Width="350" WindowStartupLocation="CenterScreen">
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20 0 20">
+
+        <ListView Name="workersControl" Width="150" Margin="0 0 20 0" MouseDoubleClick="Workers_DoubleClick">
+
+        </ListView>
+
+        <ListView Name="allWorkersControl" Width="150" MouseDoubleClick="AllWorkwers_DoubleClick">
+
+        </ListView>
+    </StackPanel>
+</Window>

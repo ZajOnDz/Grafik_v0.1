@@ -1,0 +1,20 @@
+﻿<Window x:Class="Grafik_v0._1.Windows.wPracownicy"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Grafik_v0._1.Windows"
+        mc:Ignorable="d"
+        Title="Pracownicy" Height="250" Width="400" WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown">
+    <StackPanel Orientation="Horizontal">
+        <ListView Name="lv_Pracownicy" Height="150" Width="150" Margin="20 20 0 0" VerticalAlignment="Top">
+
+        </ListView>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="20 20 0 0">
+            <Label Content="Imie pracownika" Height="25" Width="150" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBox Name="tbox_ImieNowegoPracownika" Height="25" Width="150" Margin="0 10 0 0" KeyDown="TextBox_OnKeyDown"/>
+            <Button Content="Dodaj" Height="25" Width="80" Margin="0 10 0 0 " Click="DodajPracownika_Click"/>
+            <Button Content="Usuń" Height="25" Width="80" Margin="0 10 0 0" Click="UsunPracownika_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

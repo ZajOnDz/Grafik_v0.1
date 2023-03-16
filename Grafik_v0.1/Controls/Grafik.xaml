@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="Grafik_v0._1.Grafik"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Grafik_v0._1"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel Orientation="Horizontal">
+        
+        <StackPanel Orientation="Vertical">
+            <!-- StackPanel zawierający imie pracownika i CheckBoxa -->
+            <StackPanel Orientation="Horizontal">
+                <Label Content="{Binding WorkerName}" Height="30" Width="80"/>
+                <CheckBox Width="20" IsChecked="False" Checked="Show_Checked" Unchecked="Show_Unchecked"/>
+            </StackPanel>
+            <!-- StackPanel z sumą godzin pracy w miesiącu -->
+            <StackPanel Orientation="Horizontal">
+                <Label Content="{Binding TotalHour}" Height="30" Width="40"/>
+                <Label Content="godzin" Height="30" Width="60"/>
+            </StackPanel>
+            
+            <Separator/>
+            
+        </StackPanel>
+        <!-- StackPanel zawierający listę GrafikMenu na każdy dzień pracy -->
+        <ItemsControl ItemsSource="{Binding menusList}">
+            
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <local:GrafikMenu/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            
+        </ItemsControl>
+        
+    </StackPanel>
+</UserControl>

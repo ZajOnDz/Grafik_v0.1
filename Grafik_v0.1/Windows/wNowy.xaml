@@ -1,0 +1,67 @@
+﻿<Window x:Class="Grafik_v0._1.Windows.wNowy"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Grafik_v0._1"
+        mc:Ignorable="d"
+        Title="Nowy grafik" Height="370" Width="350" Background="#FF8CB4DC" FontFamily="Cambria" WindowStartupLocation="CenterScreen"
+        KeyDown="Window_KeyDown" Closing="OnClose">
+    <StackPanel Orientation="Vertical">
+
+        <!-- Nagłówek -->
+
+        <StackPanel>
+            <Label Content="Tworzenie nowego pliku z grafikiem" Height="50" HorizontalAlignment="Center" FontSize="20" Foreground="White" VerticalContentAlignment="Center"/>
+            <Separator Background="White" Height="4"></Separator>
+        </StackPanel>
+
+        <!-- Wybór daty -->
+
+        <StackPanel Orientation="Horizontal" Height="30" HorizontalAlignment="Center">
+            <Label Content="Data " Foreground="White"/>
+            <ComboBox Name="rok_Combo" Height="23" Width="55" Margin="0 0 10 0">
+                <ComboBoxItem Content="2023" IsSelected="True"/>
+                <ComboBoxItem Content="2024"/>
+                <ComboBoxItem Content="2025"/>
+                <ComboBoxItem Content="2026"/>
+                <ComboBoxItem Content="2027"/>
+            </ComboBox>
+            <ComboBox Name="miesiac_Combo" Width="80" Height="23">
+                <ComboBoxItem Content="Styczeń" IsSelected="True"/>
+                <ComboBoxItem Content="Luty"/>
+                <ComboBoxItem Content="Marzec"/>
+                <ComboBoxItem Content="Kwiecień"/>
+                <ComboBoxItem Content="Maj"/>
+                <ComboBoxItem Content="Czerwiec"/>
+                <ComboBoxItem Content="Lipiec"/>
+                <ComboBoxItem Content="Sierpień"/>
+                <ComboBoxItem Content="Wrzesień"/>
+                <ComboBoxItem Content="Październik"/>
+                <ComboBoxItem Content="Listopad"/>
+                <ComboBoxItem Content="Grudzień"/>
+            </ComboBox>
+        </StackPanel>
+        <Separator Height="4" Background="White"/>
+
+        <!-- Wybór pracowników -->
+
+        <Label Content="Wybierz pracowników" Height="30" Width="150" Foreground="White"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <ListView Name="lv_ListaPracownikow" Height="150" Width="150" MouseDoubleClick="listaWszystkichPracownikow_DoubleClick">
+            </ListView>
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                <Button Content="->" Height="20"/>
+                <Button Content="&lt;-" Height="20"/>
+            </StackPanel>
+            <ListView Name="lv_WybraniPracownicy" Height="150" Width="150" MouseDoubleClick="listaWybranychPracownikow_DoubleClick">
+
+            </ListView>
+        </StackPanel>
+        <Separator Height="4" Background="White"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 15 0 0">
+            <Button Content="Zatwierdź" Height="25" Width="80" Margin="0 0 30 0" Click="Zatwierdz_Click"/>
+            <Button Content="Anuluj" Height="25" Width="80" Click="Anuluj_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

@@ -1,0 +1,44 @@
+﻿<Window x:Class="Grafik_v0._1.Windows.wOpcjePracy"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Grafik_v0._1.Windows"
+        mc:Ignorable="d"
+        Title="Godziny pracy" Height="300" Width="400" KeyDown="Window_OnkeyDown" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <ListView Name="SchemeListViewControl" Width="130" Margin="20 20" SelectionChanged="SchemeListViewControl_Click">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0 0">
+                            <Rectangle Stroke="Black" StrokeThickness="0.5"></Rectangle>
+                            <StackPanel Orientation="Horizontal" Margin="5 5 0 0 ">
+                                <TextBlock Text="{Binding Content}" Width="60" Height="40"/>
+                                <TextBlock Text="{Binding Hour}" Width="35" Height="25"/>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="0 0 20 0">
+                <Button Name="upButton" Content="^" Width="20" Margin="0 0 0 20" Click="PrzesunWGore_Click"/>
+                <Button Name="downButton" Content="v" Click="PrzesunWDol_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+
+                <Label Content="Wyświetlany tekst" HorizontalAlignment="Center"/>
+                <TextBox Name="selectedItemContent" Height="50" Width="50" AcceptsReturn="True" HorizontalAlignment="Center"/>
+                <Label Content="Ilość godzin" HorizontalAlignment="Center"/>
+                <TextBox Name="selectedItemHour" Height="25" Width="50" Text="" HorizontalAlignment="Center"/>
+
+                <Button Content="Dodaj" Margin="5 5" Click="Dodaj_Click"/>
+                <Button Content="Usuń" Margin="5 5" Click="Usun_Click"/>
+                <Button Content="Zapisz" Margin="5 5" Click="Zapisz_Click"/>
+                <Button Content=" Zapisz jako stały schemat " Margin="5 5" Click="ZapiszSchemat_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Window>
