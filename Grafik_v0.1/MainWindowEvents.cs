@@ -150,7 +150,7 @@ namespace Grafik_v0._1
 		}
 
 		/// <summary>
-		///  Event - Obsługuje procedure wyjścia z aplikacji. Zapisywanie danych.
+		///  Event wyjścia z aplikacji. Zapisywanie danych.
 		/// </summary>
 		private void OnClose(object sender, System.ComponentModel.CancelEventArgs e)
 		{

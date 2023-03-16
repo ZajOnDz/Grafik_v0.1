@@ -7,16 +7,24 @@ using System.Windows.Input;
 namespace Grafik_v0._1.Windows
 {
     /// <summary>
-    /// Logika interakcji dla klasy wOpcjePracy.xaml
+    /// Okno edycji menu opcji pracy
     /// </summary>
     public partial class wOpcjePracy : Window
 	{
+		/// <summary>
+		/// Konstruktor
+		/// </summary>
 		public wOpcjePracy()
 		{
 			InitializeComponent();
 			SchemeListViewControl.ItemsSource = RWFile.schematMenu;
 		}
 
+		/// <summary>
+		/// Aktywacja lub dezaktywacja przycisków Góra/Dół 
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void SchemeListViewControl_Click(object sender, SelectionChangedEventArgs e)
 		{
 			if (SchemeListViewControl.SelectedIndex == RWFile.schematMenu.Count - 1)
@@ -56,6 +64,9 @@ namespace Grafik_v0._1.Windows
 			selectedItemHour.Text = RWFile.schematMenu[SchemeListViewControl.SelectedIndex].Hour.ToString();
 		}
 
+		/// <summary>
+		/// Dodawanie nowej opcji do menu
+		/// </summary>
 		private void Dodaj_Click(object sender, RoutedEventArgs e)
 		{
 			try
@@ -89,6 +100,9 @@ namespace Grafik_v0._1.Windows
 			}
 		}
 
+		/// <summary>
+		/// Usuwanie opcji z menu
+		/// </summary>
 		private void Usun_Click(object sender, RoutedEventArgs e)
 		{
 			int index = SchemeListViewControl.SelectedIndex;
@@ -125,6 +139,11 @@ namespace Grafik_v0._1.Windows
 			}
 		}
 
+		/// <summary>
+		/// Zapisywanie danych opcji po edytowaniu
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void Zapisz_Click(object sender, RoutedEventArgs e)
 		{
 
@@ -144,6 +163,9 @@ namespace Grafik_v0._1.Windows
 			}
 		}
 
+		/// <summary>
+		/// Przesówanie opcji menu w górę
+		/// </summary>
 		private void PrzesunWGore_Click(object sender, RoutedEventArgs e)
 		{
 			if (SchemeListViewControl.SelectedIndex != RWFile.schematMenu.Count - 1)
@@ -183,6 +205,9 @@ namespace Grafik_v0._1.Windows
 			RWFile.Saved = false;
 		}
 
+		/// <summary>
+		/// Przesówanie opcji menu w dół
+		/// </summary>
 		private void PrzesunWDol_Click(object sender, RoutedEventArgs e)
 		{
 			if (SchemeListViewControl.SelectedIndex != RWFile.schematMenu.Count - 1)
@@ -220,6 +245,9 @@ namespace Grafik_v0._1.Windows
 			RWFile.Saved = false;
 		}
 
+		/// <summary>
+		/// Zapisywanie obecnego menu jako stałego schematu który wczytuje się na starcie programu.
+		/// </summary>
 		private void ZapiszSchemat_Click(object sender, RoutedEventArgs e)
 		{
 			DB.schematMenu = new ObservableCollection<MenuItem>();
@@ -230,6 +258,9 @@ namespace Grafik_v0._1.Windows
 			}
 		}
 
+		/// <summary>
+		/// Zamykanie okno po wciśnięciu Esc
+		/// </summary>
 		private void Window_OnkeyDown(object sender, KeyEventArgs e)
 		{
 			if (e.Key == Key.Escape)

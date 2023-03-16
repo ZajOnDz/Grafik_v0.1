@@ -20,7 +20,7 @@ namespace Grafik_v0._1
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        // Przełącza tryb wybierania godzin pracy lub kolorowania
         public bool Coloring { get; set; } = false;
 
         public MainWindow()

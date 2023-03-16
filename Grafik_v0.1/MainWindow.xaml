@@ -13,6 +13,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
+        <!-- Menu górne -->
         <Menu Height="25" VerticalAlignment="Top" Grid.Row="0">
             <MenuItem Header="Plik">
                 <MenuItem Header="Nowy" Click="Nowy_Click"/>
@@ -23,25 +24,28 @@
                 <MenuItem Header="Wyjście" Click="Wyjscie_Click"/>
             </MenuItem>
             <MenuItem Header="Pracownicy">
-                <MenuItem Name="menuDodajUsunPracownika" Header="Dodaj do grafiku" Click="DodajPracownikaDoGrafiku_Click" IsEnabled="False"/>
                 <!-- Otwiera okno z listą pracowników do dodania do grafiku -->
+                <MenuItem Name="menuDodajUsunPracownika" Header="Dodaj do grafiku" Click="DodajPracownikaDoGrafiku_Click" IsEnabled="False"/>
                 <Separator/>
-                <MenuItem Header="Zarządzaj" Click="ZarzadzajPracownikami_Click"/>
                 <!-- Otwiera okno zarządzania pracownikami -->
+                <MenuItem Header="Zarządzaj" Click="ZarzadzajPracownikami_Click"/>
             </MenuItem>
             <MenuItem Header="Opcje pracy">
-                <MenuItem Header="Konfiguracja opcji pracy" Click="KonfiguracjaOpcjiPracy_Click"/>
                 <!-- Okno konfugurowania wzoru menu -->
+                <MenuItem Header="Konfiguracja opcji pracy" Click="KonfiguracjaOpcjiPracy_Click"/>
             </MenuItem>
         </Menu>
 
+        <!-- Panel z grafikiem -->
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.Row="1">
             <StackPanel Orientation="Vertical">
-
+                
+                <!-- Kalendarz -->
                 <StackPanel Name="calendarPanel" Grid.Row="1">
 
                 </StackPanel>
-
+                
+                <!-- Lista grafików pracowników -->
                 <StackPanel Orientation="Horizontal">
 
                     <ItemsControl Name="grafikControlsList" >
@@ -60,7 +64,8 @@
 
             </StackPanel>
         </ScrollViewer>
-
+        
+        <!-- ColorPicker -->
         <StackPanel Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Center">
             <local:ColorPicker/>
             <Button Name="colorButton" Content="Koloruj" Width="100" Margin="5 5" IsEnabled="False" Click="ColorButton_Click"/>

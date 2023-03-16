@@ -5,13 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Grafik_v0._1.Windows"
         mc:Ignorable="d"
-        Title="DodajPracownika" Height="250" Width="350" WindowStartupLocation="CenterScreen">
+        Title="DodajPracownika" Height="250" Width="350" WindowStartupLocation="CenterScreen" Background="#FF8CB4DC">
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20 0 20">
-
+        
+        <!-- Lista pracowników obecnych w grafiku -->
         <ListView Name="workersControl" Width="150" Margin="0 0 20 0" MouseDoubleClick="Workers_DoubleClick">
 
         </ListView>
-
+        
+        <!-- Lista wszystkich pracowników w firmie -->
         <ListView Name="allWorkersControl" Width="150" MouseDoubleClick="AllWorkwers_DoubleClick">
 
         </ListView>

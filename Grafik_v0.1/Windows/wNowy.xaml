@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Grafik_v0._1"
         mc:Ignorable="d"
         Title="Nowy grafik" Height="370" Width="350" Background="#FF8CB4DC" FontFamily="Cambria" WindowStartupLocation="CenterScreen"
-        KeyDown="Window_KeyDown" Closing="OnClose">
+        KeyDown="Window_KeyDown">
     <StackPanel Orientation="Vertical">
 
         <!-- Nagłówek -->
@@ -47,21 +47,27 @@
         <!-- Wybór pracowników -->
 
         <Label Content="Wybierz pracowników" Height="30" Width="150" Foreground="White"/>
+        
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <ListView Name="lv_ListaPracownikow" Height="150" Width="150" MouseDoubleClick="listaWszystkichPracownikow_DoubleClick">
-            </ListView>
-            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                <Button Content="->" Height="20"/>
-                <Button Content="&lt;-" Height="20"/>
-            </StackPanel>
-            <ListView Name="lv_WybraniPracownicy" Height="150" Width="150" MouseDoubleClick="listaWybranychPracownikow_DoubleClick">
 
-            </ListView>
+            <ListView Name="lv_ListaPracownikow" Height="150" Width="150" MouseDoubleClick="listaWszystkichPracownikow_DoubleClick"/>
+
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                <Button Content="->" Height="20" Click="DodajPracownika_Click"/>
+                <Button Content="&lt;-" Height="20" Click="UsunPracownika_Click"/>
+            </StackPanel>
+            
+            <ListView Name="lv_WybraniPracownicy" Height="150" Width="150" MouseDoubleClick="listaWybranychPracownikow_DoubleClick"/>
+
+
         </StackPanel>
+        
         <Separator Height="4" Background="White"/>
+        
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 15 0 0">
             <Button Content="Zatwierdź" Height="25" Width="80" Margin="0 0 30 0" Click="Zatwierdz_Click"/>
             <Button Content="Anuluj" Height="25" Width="80" Click="Anuluj_Click"/>
         </StackPanel>
+        
     </StackPanel>
 </Window>
