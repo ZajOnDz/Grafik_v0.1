@@ -96,7 +96,7 @@ namespace Grafik_v0._1.Windows
 			}
 			catch (Exception exc)
 			{
-				MessageBox.Show(exc.ToString());
+				MessageBox.Show("Wystąpił błąd");
 			}
 		}
 
@@ -107,16 +107,16 @@ namespace Grafik_v0._1.Windows
 		{
 			int index = SchemeListViewControl.SelectedIndex;
 
-			SchemeListViewControl.SelectedIndex = SchemeListViewControl.SelectedIndex + 1;
+			
 
 			if (index != RWFile.schematMenu.Count - 1 && index != -1)
 			{
+				SchemeListViewControl.SelectedIndex = SchemeListViewControl.SelectedIndex + 1;
+
 				try
 				{
-					MessageBox.Show("obiektów " + RWFile.schematMenu.Count.ToString() + "\nWybrany " + index);
 					RWFile.schematMenu.RemoveAt(index);
 
-					MessageBox.Show("usuwanie");
 					foreach (var grafik in RWFile.grafikList)
 					{
 						foreach (var menu in grafik.menusList)
@@ -134,7 +134,7 @@ namespace Grafik_v0._1.Windows
 				}
 				catch (Exception exc)
 				{
-					MessageBox.Show(exc.ToString());
+					MessageBox.Show("Wystąpił błąd");
 				}
 			}
 		}

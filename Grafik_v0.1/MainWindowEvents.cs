@@ -1,18 +1,14 @@
 ﻿using Grafik_v0._1.Windows;
 using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Grafik_v0._1
 {
-	/// <summary>
-	/// Część MainWindow obsługująca wszystkie eventy głównego okna. Głównie obsługa górnego menu.
-	/// </summary>
-	public partial class MainWindow
+    /// <summary>
+    /// Część MainWindow obsługująca wszystkie eventy głównego okna. Głównie obsługa górnego menu.
+    /// </summary>
+    public partial class MainWindow
 	{
 		/// <summary>
 		///  Event - Tworzenie nowego pliku grafiku

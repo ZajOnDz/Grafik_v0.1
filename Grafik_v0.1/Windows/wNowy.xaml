@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Grafik_v0._1"
         mc:Ignorable="d"
-        Title="Nowy grafik" Height="370" Width="350" Background="#FF8CB4DC" FontFamily="Cambria" WindowStartupLocation="CenterScreen"
+        Title="Nowy grafik" Height="400" Width="350" Background="#FF8CB4DC" FontFamily="Cambria" WindowStartupLocation="CenterScreen"
         KeyDown="Window_KeyDown">
     <StackPanel Orientation="Vertical">
 
         <!-- Nagłówek -->
 
         <StackPanel>
-            <Label Content="Tworzenie nowego pliku z grafikiem" Height="50" HorizontalAlignment="Center" FontSize="20" Foreground="White" VerticalContentAlignment="Center"/>
+            <Label Content="Nowy grafik" Height="50" HorizontalAlignment="Center" FontSize="20" Foreground="White" VerticalContentAlignment="Center"/>
             <Separator Background="White" Height="4"></Separator>
         </StackPanel>
 
@@ -46,19 +46,21 @@
 
         <!-- Wybór pracowników -->
 
-        <Label Content="Wybierz pracowników" Height="30" Width="150" Foreground="White"/>
+        <Label Content="Wybierz pracowników" Height="30" Foreground="White" HorizontalAlignment="Center"/>
         
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-
-            <ListView Name="lv_ListaPracownikow" Height="150" Width="150" MouseDoubleClick="listaWszystkichPracownikow_DoubleClick"/>
-
+            <StackPanel Orientation="Vertical">
+                <Label Content="Wszyscy pracownicy" Foreground="White" HorizontalAlignment="Center"/>
+                <ListView Name="lv_ListaPracownikow" Height="150" Width="150" MouseDoubleClick="listaWszystkichPracownikow_DoubleClick"/>
+            </StackPanel>
             <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                 <Button Content="->" Height="20" Click="DodajPracownika_Click"/>
                 <Button Content="&lt;-" Height="20" Click="UsunPracownika_Click"/>
             </StackPanel>
-            
-            <ListView Name="lv_WybraniPracownicy" Height="150" Width="150" MouseDoubleClick="listaWybranychPracownikow_DoubleClick"/>
-
+            <StackPanel Orientation="Vertical">
+                <Label Content="Pracownicy w grafiku" Foreground="White" HorizontalAlignment="Center"/>
+                <ListView Name="lv_WybraniPracownicy" Height="150" Width="150" MouseDoubleClick="listaWybranychPracownikow_DoubleClick"/>
+            </StackPanel>
 
         </StackPanel>
         

@@ -1,5 +1,4 @@
-﻿
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Input;
 
 namespace Grafik_v0._1.Windows

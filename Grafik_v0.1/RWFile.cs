@@ -1,29 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Media;
 
 namespace Grafik_v0._1
 {
+    /// <summary>
+    /// Klasa odpowiedzialna za odczytywanie, przechowywanie i zapisywanie danych o grafiku do pliku
+    /// </summary>
     public static class RWFile
     {
-
+        // Ścieżka do zapisanego/otwartego pliku
         public static string Path { get; set; } = "";
+        // Data której dotyczy grafik
         public static DateTime Data { get; set; } = DateTime.Now;
-
+        // Lista pracowników w grafiku
         public static ObservableCollection<string> Workers { get; set; } = new ObservableCollection<string>();
-
+        // Schemat opcji menu użytych w obecnie otwartym grafiku
         public static ObservableCollection<MenuItem> schematMenu { get; set; } = new ObservableCollection<MenuItem>();
-
+        // Lista grafików pracowników
         public static ObservableCollection<Grafik> grafikList { get; set; } = new ObservableCollection<Grafik>();
-
+        // Zawiera informację czy istnieją jakiejś nie zapisane zmiany
         public static bool Saved { get; set; } = true;
 
+        /// <summary>
+        /// Zapisywanie pliku z grafikiem.
+        /// </summary>
         public static void SaveFile()
         {
             MemoryStream MS = new MemoryStream();
@@ -55,8 +57,8 @@ namespace Grafik_v0._1
             byte menuCount = (byte)schematMenu.Count;
 
             BW.Write(menuCount);
-            // opcje menu
 
+            // opcje menu
             foreach (var menu in schematMenu)
             {
                 BW.Write(menu.Content);
@@ -64,7 +66,6 @@ namespace Grafik_v0._1
             }
 
             // grafiki pracowników
-
             foreach (var grafik in grafikList)
             {
                 BW.Write(grafik.WorkerName);
@@ -88,6 +89,9 @@ namespace Grafik_v0._1
             Saved = true;
         }
 
+        /// <summary>
+        /// Wczytywanie pliku grafiku.
+        /// </summary>
         public static void ReadFile()
         {
             MemoryStream MS = new MemoryStream(File.ReadAllBytes(Path));
@@ -109,7 +113,6 @@ namespace Grafik_v0._1
             byte workersCount = BR.ReadByte();
 
             // pracownicy
-            
             for (int i = 0; i < workersCount; i++)
             {
                 Workers.Add(BR.ReadString());
@@ -128,7 +131,6 @@ namespace Grafik_v0._1
             }
 
             // grafiki pracowników
-
             for (int i = 0; i < workersCount; i++)
             {
                 Grafik grafik = new Grafik();

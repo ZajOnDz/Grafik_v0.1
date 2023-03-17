@@ -1,15 +1,14 @@
 ﻿using System.Collections.ObjectModel;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
 namespace Grafik_v0._1
 {
-	/// <summary>
-	/// Logika interakcji dla klasy ColorPicker.xaml
-	/// </summary>
-	public partial class ColorPicker : UserControl
+    /// <summary>
+    /// Logika interakcji dla klasy ColorPicker.xaml
+    /// </summary>
+    public partial class ColorPicker : UserControl
 	{
 		// Lista kolorow do wyboru
 		ObservableCollection<SolidColorBrush> ColorList = new ObservableCollection<SolidColorBrush>()

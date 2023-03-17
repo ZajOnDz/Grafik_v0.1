@@ -39,9 +39,9 @@
                 <Label Content="Ilość godzin" HorizontalAlignment="Center"/>
                 <TextBox Name="selectedItemHour" Height="25" Width="50" Text="" HorizontalAlignment="Center"/>
 
-                <Button Content="Dodaj" Margin="5 5" Click="Dodaj_Click"/>
-                <Button Content="Usuń" Margin="5 5" Click="Usun_Click"/>
-                <Button Content="Zapisz" Margin="5 5" Click="Zapisz_Click"/>
+                <Button Content="Dodaj jako nowy" Margin="5 5" Click="Dodaj_Click"/>
+                <Button Content="Usuń zaznaczoną opcje" Margin="5 5" Click="Usun_Click"/>
+                <Button Content="Zapisz zmiany" Margin="5 5" Click="Zapisz_Click"/>
                 <Button Content=" Zapisz jako stały schemat " Margin="5 5" Click="ZapiszSchemat_Click"/>
             </StackPanel>
 
